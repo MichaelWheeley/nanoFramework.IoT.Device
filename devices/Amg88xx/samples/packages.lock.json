@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETnanoFramework,Version=v1.0": {
+      "nanoFramework.CoreLibrary": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.52, 2.0.0-preview.52]",
+        "resolved": "2.0.0-preview.52",
+        "contentHash": "cV9JEhoc2OV/UL602i5xmEwQpnn/gzVMlDTAIAMRxCNwBKNYLO9U50OkJykpGnO2SULTsmvFqQWEGZiuANBZHw=="
+      },
+      "nanoFramework.Graphics.Core": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.27, 2.0.0-preview.27]",
+        "resolved": "2.0.0-preview.27",
+        "contentHash": "HEveouEd5dOXuhYCC6BJW1Q46mIFEGoG/62S4fsfrdrWIhrIXpEcqMpS/jQ4ZrtsD+SdfhsKQjvT7wdAVCzDVg=="
+      },
+      "nanoFramework.Runtime.Events": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.13, 2.0.0-preview.13]",
+        "resolved": "2.0.0-preview.13",
+        "contentHash": "LmPsdvTKJ5HiJbX0FNFWWIvHh23kWmKWCIHggSnMrjaZnjXubqct75mQiB2aWtC7IW0PjGxB2A4cvtle3Zjvzg=="
+      },
+      "nanoFramework.System.Buffers.Binary.BinaryPrimitives": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.77, 2.0.0-preview.77]",
+        "resolved": "2.0.0-preview.77",
+        "contentHash": "uJJoIcsTYFh52M3b12XvYCPf8EVtw0eP7A0UDSctsv3FS6wXtIrdYfkEHW2OnpYrPGMSjckFDsW1RpBgpniXcg=="
+      },
+      "nanoFramework.System.Device.Gpio": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.18, 2.0.0-preview.18]",
+        "resolved": "2.0.0-preview.18",
+        "contentHash": "e5hKEwabzb4LOau0A0sPCggh2cgNBMR6EVo+dbGvGNwLCo1t9NN3Eoqjy7vI2KVrfUHQkLJV7cSOG/RJCOm9sw=="
+      },
+      "nanoFramework.System.Device.I2c": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.12, 2.0.0-preview.12]",
+        "resolved": "2.0.0-preview.12",
+        "contentHash": "i2saSw4cycURTRIJQyd2jm7y/zvFCXqKHrh7h+uim5tfkboIphRoZzj+G3YJxu+Nz53WNyAyCyv2QEMOPt0fYg=="
+      },
+      "nanoFramework.UnitsNet.Temperature": {
+        "type": "Direct",
+        "requested": "[5.77.0-preview.16, 5.77.0-preview.16]",
+        "resolved": "5.77.0-preview.16",
+        "contentHash": "fTetAqgtFyk4P0l27t4bvk7HGX2zw95S4+cnYIbTmnykmMBsKgOtj4sOsQSOgJh1YOkl4YkuUXuyCS3xjeLZzQ=="
+      }
+    }
+  }
+}

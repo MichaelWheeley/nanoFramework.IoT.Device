@@ -11,12 +11,12 @@ using UnitsNet;
 namespace Iot.Device.Adxl357
 {
     /// <summary>
-    /// I2C Accelerometer ADXL357
+    /// I2C Accelerometer ADXL357.
     /// </summary>
     public class Adxl357 : IDisposable
     {
         /// <summary>
-        /// The default I2C address of ADXL357 device
+        /// The default I2C address of ADXL357 device.
         /// </summary>
         public const byte DefaultI2CAddress = 0x1d;
 
@@ -28,7 +28,7 @@ namespace Iot.Device.Adxl357
         private I2cDevice _i2CDevice;
 
         /// <summary>
-        /// Constructs a ADXL357 I2C device.
+        /// Initializes a new instance of the <see cref="Adxl357" /> class. ADXL357 I2C device.
         /// </summary>
         /// <param name="i2CDevice">The I2C device used for communication.</param>
         /// <param name="accelerometerRange">The sensitivity of the accelerometer.</param>
@@ -84,7 +84,7 @@ namespace Iot.Device.Adxl357
             var avgY = CaclulateAverage(caliBuffer, 1);
             var avgZ = CaclulateAverage(caliBuffer, 2);
 
-            var x = (((avgZ - avgX) + (avgZ - avgY)) / 2);
+            var x = ((avgZ - avgX) + (avgZ - avgY)) / 2;
             _factory = x == 0 ? float.PositiveInfinity : 1.0F / x;
         }
 
@@ -106,6 +106,7 @@ namespace Iot.Device.Adxl357
                         break;
                 }
             }
+
             return (float)(avg / buffer.Length);
         }
 
@@ -125,13 +126,13 @@ namespace Iot.Device.Adxl357
 
         private double GetTemperature()
         {
-            SpanByte data = new byte[2] { 0, 0 };
+            Span<byte> data = new byte[2] { 0, 0 };
 
             ReadBytes(Register.TEMPERATURE_REG_ADDR, data);
 
             double value = BinaryPrimitives.ReadUInt16BigEndian(data);
 
-            return 25 + (value - 1852) / -9.05;
+            return 25 + ((value - 1852) / -9.05);
         }
 
         private void Reset()
@@ -148,7 +149,7 @@ namespace Iot.Device.Adxl357
 
         private Vector3 GetRawAccelerometer()
         {
-            SpanByte data = new byte[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            Span<byte> data = new byte[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             var ace = new Vector3();
 
@@ -183,7 +184,7 @@ namespace Iot.Device.Adxl357
 
         private void WriteRegister(Register register, byte data)
         {
-            SpanByte dataout = new byte[]
+            Span<byte> dataout = new byte[]
             {
                 (byte)register, data
             };
@@ -197,7 +198,7 @@ namespace Iot.Device.Adxl357
             return _i2CDevice.ReadByte();
         }
 
-        private void ReadBytes(Register register, SpanByte readBytes)
+        private void ReadBytes(Register register, Span<byte> readBytes)
         {
             _i2CDevice.WriteByte((byte)register);
             _i2CDevice.Read(readBytes);
@@ -206,8 +207,11 @@ namespace Iot.Device.Adxl357
         /// <inheritdoc />
         public void Dispose()
         {
-            _i2CDevice.Dispose();
-            _i2CDevice = null!;
+            if (_i2CDevice != null)
+            {
+                _i2CDevice.Dispose();
+                _i2CDevice = null;
+            }
         }
     }
 }

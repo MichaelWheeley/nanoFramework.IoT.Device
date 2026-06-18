@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <NanoFrameworkProjectSystemPath>$(MSBuildExtensionsPath)\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
@@ -20,21 +20,17 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Reference Include="Iot.Device.Common.NumberHelper, Version=1.1.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Iot.Device.Common.NumberHelper.1.1.113.2032\lib\Iot.Device.Common.NumberHelper.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Iot.Device.Common.NumberHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Iot.Device.Common.NumberHelper.2.0.0-preview.77\lib\netnano1.0\Iot.Device.Common.NumberHelper.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.2.0.0-preview.52\lib\netnano1.0\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="System.Device.I2c, Version=1.0.3.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.I2c.1.0.3\lib\System.Device.I2c.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nanoFramework.UnitsNet.Temperature, Version=5.77.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.UnitsNet.Temperature.5.77.0-preview.16\lib\netnano1.0\nanoFramework.UnitsNet.Temperature.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.Temperature, Version=4.137.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Temperature.4.137.0\lib\UnitsNet.Temperature.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Device.I2c, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Device.I2c.2.0.0-preview.12\lib\netnano1.0\System.Device.I2c.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

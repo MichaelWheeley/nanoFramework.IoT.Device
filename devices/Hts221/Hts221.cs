@@ -10,20 +10,40 @@ using UnitsNet;
 namespace Iot.Device.Hts221
 {
     /// <summary>
-    /// HTS221 - Capacitive digital sensor for relative humidity and temperature
+    /// HTS221 - Capacitive digital sensor for relative humidity and temperature.
     /// </summary>
     [Interface("HTS221 - Capacitive digital sensor for relative humidity and temperature")]
     public class Hts221 : IDisposable
     {
         private const byte ReadMask = 0x80;
+
+        /// <summary>
+        /// Device ID when reading the WHO_AM_I register.
+        /// </summary>
+        private const byte DeviceId = 0xBC;
+
         private I2cDevice _i2c;
 
         /// <summary>
-        /// Hts221 - Temperature and humidity sensor
+        /// Device I2C Address.
         /// </summary>
+        public const byte DefaultI2cAddress = 0x5F;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hts221" /> class. Temperature and humidity sensor.
+        /// </summary>
+        /// <param name="i2cDevice">I2C device.</param>
+        /// <exception cref="SystemException">If the device is not found.</exception>
         public Hts221(I2cDevice i2cDevice)
         {
             _i2c = i2cDevice ?? throw new ArgumentNullException(nameof(i2cDevice));
+
+            // check if the device is present
+            var id = Read(Register.WhoAmI);
+            if (id != DeviceId)
+            {
+                throw new SystemException();
+            }
 
             // Highest resolution for both temperature and humidity sensor:
             // 0.007 DegreesCelsius and 0.03 percentage of relative humidity respectively
@@ -31,6 +51,7 @@ namespace Iot.Device.Hts221
             WriteByte(Register.ResolutionMode, resolution);
 
             byte control1orig = Read(Register.Control1);
+
             // 7 - PD - power down control - 1 means active
             // 6-3 - reserved - keep original
             // 2 - BDU - block data update - 1 is recommended by datasheet and means that output registers
@@ -41,13 +62,13 @@ namespace Iot.Device.Hts221
         }
 
         /// <summary>
-        /// Temperature
+        /// Temperature reading.
         /// </summary>
         [Telemetry]
         public Temperature Temperature => Temperature.FromDegreesCelsius(GetActualTemperature(ReadInt16(Register.Temperature)));
 
         /// <summary>
-        /// Relative humidity
+        /// Relative humidity.
         /// </summary>
         [Telemetry]
         public RelativeHumidity Humidity => GetActualHumidity(ReadInt16(Register.Humidity));
@@ -56,12 +77,12 @@ namespace Iot.Device.Hts221
         {
             float xrange = x1 - x0;
             float yrange = y1 - y0;
-            return y0 + (x - x0) * yrange / xrange;
+            return y0 + ((x - x0) * yrange / xrange);
         }
 
         private void WriteByte(Register register, byte data)
         {
-            SpanByte buff = new byte[2]
+            Span<byte> buff = new byte[2]
             {
                 (byte)register,
                 data
@@ -72,12 +93,12 @@ namespace Iot.Device.Hts221
 
         private short ReadInt16(Register register)
         {
-            SpanByte val = new byte[2];
+            Span<byte> val = new byte[2];
             Read(register, val);
             return BinaryPrimitives.ReadInt16LittleEndian(val);
         }
 
-        private void Read(Register register, SpanByte buffer)
+        private void Read(Register register, Span<byte> buffer)
         {
             _i2c.WriteByte((byte)((byte)register | ReadMask));
             _i2c.Read(buffer);
@@ -118,7 +139,7 @@ namespace Iot.Device.Hts221
         // Original code: private (ushort T0x8, ushort T1x8) GetTemperatureCalibrationPointsCelsius()
         private TuppleUshortUshort GetTemperatureCalibrationPointsCelsius()
         {
-            SpanByte t0t1Lsb = new byte[2];
+            Span<byte> t0t1Lsb = new byte[2];
             Read(Register.Temperature0LsbDegCx8, t0t1Lsb);
             byte t0t1Msb = Read(Register.Temperature0And1MsbDegCx8);
 
@@ -130,7 +151,7 @@ namespace Iot.Device.Hts221
         // Original code: private (short T0, short T1) GetTemperatureCalibrationPointsRaw()
         private TuppleShortShort GetTemperatureCalibrationPointsRaw()
         {
-            SpanByte t0t1 = new byte[4];
+            Span<byte> t0t1 = new byte[4];
             Read(Register.Temperature0Raw, t0t1);
             short t0 = BinaryPrimitives.ReadInt16LittleEndian(t0t1.Slice(0, 2));
             short t1 = BinaryPrimitives.ReadInt16LittleEndian(t0t1.Slice(2, 2));
@@ -140,7 +161,7 @@ namespace Iot.Device.Hts221
         // Original code: private (byte H0, byte H1) GetHumidityCalibrationPointsRH()
         private TuppleByteByte GetHumidityCalibrationPointsRH()
         {
-            SpanByte h0h1 = new byte[2];
+            Span<byte> h0h1 = new byte[2];
             Read(Register.Humidity0rHx2, h0h1);
             return new TuppleByteByte(h0h1[0], h0h1[1]);
         }
@@ -157,8 +178,11 @@ namespace Iot.Device.Hts221
         /// <inheritdoc/>
         public void Dispose()
         {
-            _i2c?.Dispose();
-            _i2c = null!;
+            if (_i2c != null)
+            {
+                _i2c?.Dispose();
+                _i2c = null;
+            }
         }
     }
 }

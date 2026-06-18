@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETnanoFramework,Version=v1.0": {
+      "nanoFramework.CoreLibrary": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.52, 2.0.0-preview.52]",
+        "resolved": "2.0.0-preview.52",
+        "contentHash": "cV9JEhoc2OV/UL602i5xmEwQpnn/gzVMlDTAIAMRxCNwBKNYLO9U50OkJykpGnO2SULTsmvFqQWEGZiuANBZHw=="
+      },
+      "nanoFramework.Hardware.Esp32": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.12, 2.0.0-preview.12]",
+        "resolved": "2.0.0-preview.12",
+        "contentHash": "REFam731tAR2xtgoE67eWqZS208vnkPoTpe/5xTRhxeS/chw0w3VUAnP9RUKUehwe+pOIyJmtyU/WzauUXKeDw=="
+      },
+      "nanoFramework.Runtime.Events": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.13, 2.0.0-preview.13]",
+        "resolved": "2.0.0-preview.13",
+        "contentHash": "LmPsdvTKJ5HiJbX0FNFWWIvHh23kWmKWCIHggSnMrjaZnjXubqct75mQiB2aWtC7IW0PjGxB2A4cvtle3Zjvzg=="
+      },
+      "nanoFramework.System.Device.I2c": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.12, 2.0.0-preview.12]",
+        "resolved": "2.0.0-preview.12",
+        "contentHash": "i2saSw4cycURTRIJQyd2jm7y/zvFCXqKHrh7h+uim5tfkboIphRoZzj+G3YJxu+Nz53WNyAyCyv2QEMOPt0fYg=="
+      },
+      "nanoFramework.System.Math": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.19, 2.0.0-preview.19]",
+        "resolved": "2.0.0-preview.19",
+        "contentHash": "rA+f9ooOIDVpHPvvnroV3KifN+uUD7LcGGXBqVhr1cE2YlSnsFtGHrXebOl/GyCSMlK0KsmgcAGVMIMTVas4Eg=="
+      },
+      "nanoFramework.System.Numerics": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.82, 2.0.0-preview.82]",
+        "resolved": "2.0.0-preview.82",
+        "contentHash": "6lcRP+6ZZYh+F5sawWlTuKeMNszcXf2nK7f7C/pxMVc5U4ktp0seOuOB2HthI23wCukY0G7sq33z88QGiM2IgQ=="
+      },
+      "StyleCop.Analyzers": {
+        "type": "Direct",
+        "requested": "[1.1.118, 1.1.118]",
+        "resolved": "1.1.118",
+        "contentHash": "Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw=="
+      }
+    }
+  }
+}

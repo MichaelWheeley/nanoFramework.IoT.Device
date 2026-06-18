@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETnanoFramework,Version=v1.0": {
+      "nanoFramework.CoreLibrary": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.52, 2.0.0-preview.52]",
+        "resolved": "2.0.0-preview.52",
+        "contentHash": "cV9JEhoc2OV/UL602i5xmEwQpnn/gzVMlDTAIAMRxCNwBKNYLO9U50OkJykpGnO2SULTsmvFqQWEGZiuANBZHw=="
+      },
+      "nanoFramework.Runtime.Events": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.13, 2.0.0-preview.13]",
+        "resolved": "2.0.0-preview.13",
+        "contentHash": "LmPsdvTKJ5HiJbX0FNFWWIvHh23kWmKWCIHggSnMrjaZnjXubqct75mQiB2aWtC7IW0PjGxB2A4cvtle3Zjvzg=="
+      },
+      "nanoFramework.System.Buffers.Binary.BinaryPrimitives": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.77, 2.0.0-preview.77]",
+        "resolved": "2.0.0-preview.77",
+        "contentHash": "uJJoIcsTYFh52M3b12XvYCPf8EVtw0eP7A0UDSctsv3FS6wXtIrdYfkEHW2OnpYrPGMSjckFDsW1RpBgpniXcg=="
+      },
+      "nanoFramework.System.Device.Gpio": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.18, 2.0.0-preview.18]",
+        "resolved": "2.0.0-preview.18",
+        "contentHash": "e5hKEwabzb4LOau0A0sPCggh2cgNBMR6EVo+dbGvGNwLCo1t9NN3Eoqjy7vI2KVrfUHQkLJV7cSOG/RJCOm9sw=="
+      },
+      "nanoFramework.System.Device.Spi": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.19, 2.0.0-preview.19]",
+        "resolved": "2.0.0-preview.19",
+        "contentHash": "YHYQykT4lYcyx0f1lyggTd1LWb2CSLK7t/19bzthobzgnzCg/JitH4iS4fBjqhDKI4SUWNbvfayttah91JNSmA=="
+      },
+      "nanoFramework.System.Math": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.19, 2.0.0-preview.19]",
+        "resolved": "2.0.0-preview.19",
+        "contentHash": "rA+f9ooOIDVpHPvvnroV3KifN+uUD7LcGGXBqVhr1cE2YlSnsFtGHrXebOl/GyCSMlK0KsmgcAGVMIMTVas4Eg=="
+      },
+      "nanoFramework.UnitsNet.Frequency": {
+        "type": "Direct",
+        "requested": "[5.77.0-preview.16, 5.77.0-preview.16]",
+        "resolved": "5.77.0-preview.16",
+        "contentHash": "Sgt2GxNMYUx7t2GasP1CX42nr+H6m/MRPJlYFf0pkW2A7vO619QHasSuX8HRknScIR+ZWfPtXcfUVfJjoDlXrA=="
+      },
+      "nanoFramework.UnitsNet.Temperature": {
+        "type": "Direct",
+        "requested": "[5.77.0-preview.16, 5.77.0-preview.16]",
+        "resolved": "5.77.0-preview.16",
+        "contentHash": "fTetAqgtFyk4P0l27t4bvk7HGX2zw95S4+cnYIbTmnykmMBsKgOtj4sOsQSOgJh1YOkl4YkuUXuyCS3xjeLZzQ=="
+      },
+      "Nerdbank.GitVersioning": {
+        "type": "Direct",
+        "requested": "[3.9.50, 3.9.50]",
+        "resolved": "3.9.50",
+        "contentHash": "HtOgGF6jZ+WYbXnCUCYPT8Y2d6mIJo9ozjK/FINTRsXdm4Zgv9GehUMa7EFoGQkqrMcDJNOIDwCmENnvXg4UbA=="
+      }
+    }
+  }
+}

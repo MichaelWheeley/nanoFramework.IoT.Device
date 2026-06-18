@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETnanoFramework,Version=v1.0": {
+      "nanoFramework.CoreLibrary": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.52, 2.0.0-preview.52]",
+        "resolved": "2.0.0-preview.52",
+        "contentHash": "cV9JEhoc2OV/UL602i5xmEwQpnn/gzVMlDTAIAMRxCNwBKNYLO9U50OkJykpGnO2SULTsmvFqQWEGZiuANBZHw=="
+      },
+      "nanoFramework.Graphics.Core": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.27, 2.0.0-preview.27]",
+        "resolved": "2.0.0-preview.27",
+        "contentHash": "HEveouEd5dOXuhYCC6BJW1Q46mIFEGoG/62S4fsfrdrWIhrIXpEcqMpS/jQ4ZrtsD+SdfhsKQjvT7wdAVCzDVg=="
+      },
+      "nanoFramework.Hardware.Esp32": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.12, 2.0.0-preview.12]",
+        "resolved": "2.0.0-preview.12",
+        "contentHash": "REFam731tAR2xtgoE67eWqZS208vnkPoTpe/5xTRhxeS/chw0w3VUAnP9RUKUehwe+pOIyJmtyU/WzauUXKeDw=="
+      },
+      "nanoFramework.Hardware.Esp32.Rmt": {
+        "type": "Direct",
+        "requested": "[3.0.0-preview.20, 3.0.0-preview.20]",
+        "resolved": "3.0.0-preview.20",
+        "contentHash": "eR73G3o9O/3ieItHZztJVud3ugJG8gO1I9hfhefQFSX0YXAC2U2moC24G7Ua07H5i6aFSXq65IkXF6Zx/RiHAQ=="
+      },
+      "nanoFramework.Runtime.Events": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.13, 2.0.0-preview.13]",
+        "resolved": "2.0.0-preview.13",
+        "contentHash": "LmPsdvTKJ5HiJbX0FNFWWIvHh23kWmKWCIHggSnMrjaZnjXubqct75mQiB2aWtC7IW0PjGxB2A4cvtle3Zjvzg=="
+      },
+      "nanoFramework.Runtime.Native": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.25, 2.0.0-preview.25]",
+        "resolved": "2.0.0-preview.25",
+        "contentHash": "/CXYVGa3HXrEA4JJ1lQsQtnczgA4W7exSqlyyWKxh29TLHPalll6Y5UoxsBmbRX0WDCWBmBZvdGNIaL3wLpuOA=="
+      },
+      "nanoFramework.System.Diagnostics.Stopwatch": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.82, 2.0.0-preview.82]",
+        "resolved": "2.0.0-preview.82",
+        "contentHash": "/M486TgzjNqsmO7B5Pdu0ZogWgTvxe3LZ87Ib/wAFT32BIbO/i1ynwkYrM0legYPQAkEwsrz2aRoZPnw0jjGYA=="
+      },
+      "Nerdbank.GitVersioning": {
+        "type": "Direct",
+        "requested": "[3.9.50, 3.9.50]",
+        "resolved": "3.9.50",
+        "contentHash": "HtOgGF6jZ+WYbXnCUCYPT8Y2d6mIJo9ozjK/FINTRsXdm4Zgv9GehUMa7EFoGQkqrMcDJNOIDwCmENnvXg4UbA=="
+      }
+    }
+  }
+}

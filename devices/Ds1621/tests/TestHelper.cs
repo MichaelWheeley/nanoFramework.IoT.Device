@@ -1,0 +1,72 @@
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Iot.Device.Common;
+using Iot.Device.Ds1621;
+using nanoFramework.TestFramework;
+using System;
+using System.Device.I2c;
+
+namespace Iot.Device.NFUnitTest
+{
+    internal static class TestHelper
+    {
+        static internal string GetRegisterName(Register register)
+        {
+            switch (register)
+            {
+                case Register.Temperature:
+                    return "Temperature";
+
+                case Register.HighTemperature:
+                    return "HighTemperature";
+
+                case Register.LowTemperature:
+                    return "LowTemperature";
+
+                case Register.Configuration:
+                    return "Configuration";
+
+                case Register.CountsRemaining:
+                    return "CountsRemaining";
+
+                case Register.CountsPerDegree:
+                    return "CountsPerDegree";
+
+                default:
+                    return "Unrecognized Register";
+            }
+        }
+
+        static internal void AssertRegistersEqual(Span<byte> registerBankA, Span<byte> registerB, Register register)
+        {
+            Assert.AreEqual(registerBankA[(byte)register], registerB[(byte)register], message: GetRegisterName(register));
+        }
+
+        static internal void AssertRegistersNotEqual(Span<byte> registerA, Span<byte> registerB, Register register)
+        {
+            Assert.AreNotEqual(registerA[(byte)register], registerB[(byte)register], message: GetRegisterName(register));
+        }
+
+        static internal void AssertMaskedRegistersEqual(byte registerA, byte registerB, byte bitMask)
+        {
+            Assert.AreEqual(registerA & bitMask, registerB & bitMask);
+        }
+
+        static internal void AssertMaskedRegistersEqual(Span<byte> registerA, Span<byte> registerB, Register register, byte bitMask)
+        {
+            Assert.AreEqual(registerA[(byte)register] & bitMask, registerB[(byte)register] & bitMask, message: GetRegisterName(register));
+        }
+
+        static internal void AssertMaskedRegistersNotEqual(byte registerA, byte registerB, byte bitMask)
+        {
+            Assert.AreNotEqual(registerA & bitMask, registerB & bitMask);
+        }
+
+        static internal void AssertMaskedRegistersNotEqual(Span<byte> registerA, Span<byte> registerB, Register register, byte bitMask)
+        {
+            Assert.AreNotEqual(registerA[(byte)register] & bitMask, registerB[(byte)register] & bitMask, message: GetRegisterName(register));
+        }
+
+    }
+}

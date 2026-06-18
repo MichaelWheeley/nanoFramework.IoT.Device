@@ -161,7 +161,7 @@ namespace Iot.Device.CharacterLcd
                 SendByte(command);
             }
 
-            public override void SendCommands(SpanByte commands)
+            public override void SendCommands(ReadOnlySpan<byte> commands)
             {
                 _controller.Write(_rsPin, PinValue.Low);
                 for (int i = 0; i < commands.Length; i++)
@@ -176,12 +176,12 @@ namespace Iot.Device.CharacterLcd
                 SendByte(value);
             }
 
-            public override void SendData(SpanByte values)
+            public override void SendData(ReadOnlySpan<byte> values)
             {
                 _controller.Write(_rsPin, PinValue.High);
                 for (int i = 0; i < values.Length; i++)
                 {
-                    SendCommand(values[i]);
+                    SendByte(values[i]);
                 }
             }
 
@@ -190,7 +190,7 @@ namespace Iot.Device.CharacterLcd
                 _controller.Write(_rsPin, PinValue.High);
                 for (int i = 0; i < values.Length; i++)
                 {
-                    SendCommand((byte)values[i]);
+                    SendByte((byte)values[i]);
                 }
             }
 

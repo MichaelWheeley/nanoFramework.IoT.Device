@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETnanoFramework,Version=v1.0": {
+      "nanoFramework.CoreLibrary": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.52, 2.0.0-preview.52]",
+        "resolved": "2.0.0-preview.52",
+        "contentHash": "cV9JEhoc2OV/UL602i5xmEwQpnn/gzVMlDTAIAMRxCNwBKNYLO9U50OkJykpGnO2SULTsmvFqQWEGZiuANBZHw=="
+      },
+      "nanoFramework.Device.OneWire": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.10, 2.0.0-preview.10]",
+        "resolved": "2.0.0-preview.10",
+        "contentHash": "MaZeF4FFz/coHxRlterZgmG6oKHXeEwnbNpbqM59bOaRmZZeUVvmpW7FNbU/nysUcNgK5VtO0oD+EVFKPmnUlw=="
+      },
+      "nanoFramework.Hardware.Esp32": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.12, 2.0.0-preview.12]",
+        "resolved": "2.0.0-preview.12",
+        "contentHash": "REFam731tAR2xtgoE67eWqZS208vnkPoTpe/5xTRhxeS/chw0w3VUAnP9RUKUehwe+pOIyJmtyU/WzauUXKeDw=="
+      },
+      "nanoFramework.Runtime.Events": {
+        "type": "Direct",
+        "requested": "[2.0.0-preview.13, 2.0.0-preview.13]",
+        "resolved": "2.0.0-preview.13",
+        "contentHash": "LmPsdvTKJ5HiJbX0FNFWWIvHh23kWmKWCIHggSnMrjaZnjXubqct75mQiB2aWtC7IW0PjGxB2A4cvtle3Zjvzg=="
+      },
+      "nanoFramework.UnitsNet.Temperature": {
+        "type": "Direct",
+        "requested": "[5.77.0-preview.16, 5.77.0-preview.16]",
+        "resolved": "5.77.0-preview.16",
+        "contentHash": "fTetAqgtFyk4P0l27t4bvk7HGX2zw95S4+cnYIbTmnykmMBsKgOtj4sOsQSOgJh1YOkl4YkuUXuyCS3xjeLZzQ=="
+      }
+    }
+  }
+}
